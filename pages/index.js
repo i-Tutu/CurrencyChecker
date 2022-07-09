@@ -17,7 +17,7 @@ export default function Home({symbols}) {
     const convertCurrency = () => {
         const options = {
             method: 'GET',
-            url: '/api/convert',
+            url: 'http://localhost:3000/api/convert',
             params: {convertFrom, convertTo, amount}
         };
         axios
@@ -88,7 +88,7 @@ export default function Home({symbols}) {
     );
 }
 export async function getServerSideProps() {
-    const res = await axios.get('/api/symbol');
+    const res = await axios.get('http://localhost:3000/api/symbol');
     const {data} = res;
     const {symbols} = data;
     if (!symbols) {
