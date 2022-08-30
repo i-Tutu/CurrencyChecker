@@ -1,6 +1,8 @@
 const Input = ({dropdown, onChange, label, symbols}) => {
-    let arrOfSymbols;
-    arrOfSymbols = Object.keys(symbols);
+
+    if (!symbols) return ("Loading")
+
+    let arrOfSymbols = Object.keys(symbols);
     return (
         <div className="flex flex-col h-16 mb-12 sm:text-sm">
             <label
